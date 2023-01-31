@@ -1,0 +1,36 @@
+<div class="form-container">
+    <form 
+        [formGroup]="signupForm" 
+        (ngSubmit)="onSubmit()">
+        <div class="container">
+            <div>
+                <label>
+                    <b>Email</b>
+                </label>
+                <input 
+                    type="email" 
+                    placeholder="email" 
+                    formControlName="email" 
+                    required>
+            </div>
+            <div>
+                <label>
+                    <b>Password</b>
+                </label>
+                <input 
+                    type="password" 
+                    placeholder="password" 
+                    formControlName="password" 
+                    required>
+            </div>
+            <button type="submit">Login</button>
+            <div>
+                <span class="psw">
+                    <a routerLink="../forgot-password"> 
+                        Forgot password
+                    </a>
+                </span>
+            </div>
+        </div>
+    </form>
+</div>
