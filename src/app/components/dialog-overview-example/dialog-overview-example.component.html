@@ -1,0 +1,122 @@
+<mat-toolbar>
+  <span>{{service.form.controls['id'].value?"Modify User":"New User"}}</span>
+  <span class="fill-remaining-space"></span>
+  <button class="btn-dialog-close"
+    mat-stroked-button
+    (click)="onClose()"
+    tabIndex="-1">
+    <mat-icon>clear</mat-icon>
+  </button>
+</mat-toolbar>
+<form [formGroup]="service.form"
+  class="normal-form"
+  (submit)="onSubmit()">
+  <mat-grid-list cols="2"
+    rowHeight="500px">
+    <mat-grid-tile>
+      <div class="controles-container">
+        <input type="hidden"
+          formControlName="id">
+        <div class="sub-container">
+          <mat-form-field>
+            <input formControlName="name"
+              matInput
+              placeholder="Name*">
+            <mat-error>This field is mandatory.</mat-error>
+          </mat-form-field>
+          <mat-form-field>
+            <input formControlName="userName"
+              matInput
+              placeholder="Username*">
+            <mat-error>This field is mandatory.</mat-error>
+          </mat-form-field>
+          <mat-form-field>
+            <input formControlName="email"
+              matInput
+              placeholder="Email">
+            <mat-error>Invalid email address.</mat-error>
+          </mat-form-field>
+        </div>
+        <div class="sub-container">
+          <mat-form-field>
+            <input formControlName="street"
+              matInput
+              placeholder="Street">
+          </mat-form-field>
+          <mat-form-field>
+            <input formControlName="suite"
+              matInput
+              placeholder="Suite">
+          </mat-form-field>
+          <mat-form-field>
+            <input formControlName="city"
+              matInput
+              placeholder="City">
+          </mat-form-field>
+          <mat-form-field>
+            <input formControlName="zipcode"
+              matInput
+              placeholder="Zipcode">
+          </mat-form-field>
+        </div>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <div class="controles-container">
+        <div class="sub-container">
+          <mat-form-field>
+            <input formControlName="lat"
+              matInput
+              placeholder="Latitude">
+          </mat-form-field>
+          <mat-form-field>
+            <input formControlName="lng"
+              matInput
+              placeholder="Longitude">
+          </mat-form-field>
+        </div>
+        <div class="sub-container">
+          <mat-form-field>
+            <mat-label>Mobile Number*</mat-label>
+            <span matPrefix>+91 &nbsp;</span>
+            <input formControlName="phone"
+              matInput
+              placeholder="987-654-3210">
+            <mat-error *ngIf="service.form.controls['phone'].hasError('required')">This field is mandatory.</mat-error>
+            <mat-error *ngIf="service.form.controls['phone'].hasError('minlength')">Minimum 8 charactors needed.
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field>
+            <input formControlName="website"
+              matInput
+              placeholder="Website">
+          </mat-form-field>
+          <mat-form-field>
+            <input formControlName="companyName"
+              matInput
+              placeholder="Company name">
+          </mat-form-field>
+          <mat-form-field>
+            <input formControlName="catchPhrase"
+              matInput
+              placeholder="Catch phrase">
+          </mat-form-field>
+          <mat-form-field>
+            <input formControlName="bs"
+              matInput
+              placeholder="Bs">
+          </mat-form-field>
+        </div>
+      </div>
+    </mat-grid-tile>
+  </mat-grid-list>
+  <div class="button-row">
+    <button mat-raised-button
+      color="primary"
+      type="submit"
+      [disabled]="service.form.invalid" (click)="onSubmit()">Create</button>
+    <button mat-raised-button
+      color="warn"
+      (click)="onClear()">Clear</button>
+  </div>
+</form>
