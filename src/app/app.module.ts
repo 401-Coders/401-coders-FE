@@ -6,13 +6,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
-import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
-import { LoginComponent } from './components/login/login.component';
-import { NotFoundComponent } from './components/not-found/not-found.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatCardModule } from '@angular/material/card';
-import { UserCrudComponent, DialogOverviewExampleComponent } from './components/index';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
@@ -25,11 +21,13 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule} from '@angular/material/sort';
 
 import { MatSidenavModule } from '@angular/material/sidenav';
-import { DefaultComponent } from './Layout/default/default.component';
-import { SidebarComponent } from './Layout/shared/sidebar/sidebar.component';
-import { DashboardComponent } from './Layout/dashboard/dashboard.component';
-import { PostsComponent } from './Layout/dashboard/posts/posts.component';
-
+import { HeaderComponent } from './components/header/header.component';
+import { HomeComponent } from './components/home/home.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { SideBarComponent } from './components/side-bar/side-bar.component';
+import { LoginComponent } from './modules/authentication/login/login.component';
+import { ForgotPasswordComponent } from './modules/authentication/forgot-password/forgot-password.component';
+import { SignupComponent } from './modules/authentication/signup/signup.component';
 
 const Ux_modules=[
   MatButtonModule,
@@ -42,15 +40,13 @@ const Ux_modules=[
 @NgModule({
   declarations: [
     AppComponent,
-    ForgotPasswordComponent,
+    HeaderComponent,
+    HomeComponent,
+    FooterComponent,
+    SideBarComponent,
     LoginComponent,
-    NotFoundComponent,
-    UserCrudComponent,
-    DialogOverviewExampleComponent,
-    DefaultComponent,
-    SidebarComponent,
-    DashboardComponent,
-    PostsComponent
+    ForgotPasswordComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,

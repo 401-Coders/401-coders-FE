@@ -1,0 +1,36 @@
+<div class="navbar">
+    <div class="top">
+        <mat-icon [inline]="true">notifications_none</mat-icon>
+    </div>
+    <div class="user">
+        <img src="https://media.licdn.com/dms/image/C4D03AQEtNu1X69IAQQ/profile-displayphoto-shrink_800_800/0/1650616398342?e=2147483647&v=beta&t=wAX7pJhP0x5EkU2w78aJJrg8ulqx4qB34yuMoPkVrXk" alt="profile-picture" />
+        <h4 class="name">admin</h4>
+        <p class="mail">admin@gmail.com</p>
+    </div>
+    <div class="menu">
+        <button mat-button class="menu-button" [routerLink]="['/dashboard']">
+            <div class="menu-head">
+                <span>dashboard</span>
+            </div>
+        </button>
+        <div class="menu-item">
+            <button mat-button class="menu-button">
+                <mat-icon>dashboard</mat-icon>
+                <span>Home</span>
+            </button>
+            <button mat-button class="menu-button" [routerLink]="['/posts']">
+                <mat-icon>message</mat-icon>
+                <span>Posts</span>
+            </button>
+            <button mat-button class="menu-button">
+                <mat-icon>comment</mat-icon>
+                <span>Comments</span>
+            </button>
+            <button mat-button class="menu-button">
+                <mat-icon>pages</mat-icon>
+                <span>Pages</span>
+            </button>
+
+        </div>
+    </div>
+</div>
